@@ -1,0 +1,124 @@
+<script>
+{
+	const a = 1;
+	throw 1;
+	let b = 2;
+	b = foo();
+}
+
+for(let i = 0; i < 10; i ++){
+	console.log(i);
+}
+
+for(let i = 0; i < 10; i ++){
+	let i = 0;
+	console.log(i);
+}
+
+function foo(){
+	for(i = 0; i < 10; i++){
+		console.log(i);
+	}
+	return;
+	var i
+}
+
+for(let p in {a:1, b:2}){
+	console.log(p);
+}
+
+for(let p of [1,2,3,4,5]){
+	console.log(p);
+}
+
+function *g(){
+	yield 0;
+	yield 1;
+	yield 4;
+}
+
+for(let p of g()){
+	console.log(p);
+}
+
+function Class(){
+public:
+	this.a  = 1;
+	this.b = 2;
+private:
+	var x =3;
+	var y = 4;
+}
+var o = new Class;
+
+
+var e = 3;
+
+try{
+	throw 2;
+} catch(e) {
+	console.log(e);
+}
+
+function* foo(){
+	yield 1;
+	yield 2;
+	var i = 3;
+	while(true)
+		yield i++
+}
+
+var i = 0;
+function tick(){
+	console.log(i++);
+	setTimeout(tick,1000);
+}
+
+var i = 0;
+while(true){
+	console.log(i++);
+}
+
+
+function sleep(t){
+	return new Promise(resolve => setTimeout(resolve, t))
+}
+void async function(){
+	var  i = 0;
+	while(true){
+		console.log(i++);
+		await sleep(1000);
+	}
+}();
+
+
+
+function sleep(t){
+	return new Promise(resolve => setTimeout(resolve, t))
+}
+async function* foo(){
+	var  i = 0;
+	while(true){
+		console.log(i++);
+		yield i++;
+		await sleep(1000);
+	}
+};
+
+
+
+var x = 0;
+function foo(){
+	var o = {x: 1};
+	x = 2;
+	with(o) {
+		var  x = 3;
+	}
+	console.log(x);
+}
+
+foo()
+console.log(x);
+
+var reg = /\"(?:[^"\\\n\r\u2028\u2029]|\\u[0-9a-fA-F]{4}\\n|)\"/
+</script>
